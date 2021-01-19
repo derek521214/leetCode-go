@@ -152,51 +152,43 @@ func addTwoNumbers1(l1 *ListNode, l2 *ListNode) *ListNode {
 func main()  {
 	l1 := &ListNode{
 		Val:  9,
-		Next: nil,
-	}
-	l1.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
-	l1.Next.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
-	l1.Next.Next.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
-	l1.Next.Next.Next.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
-	l1.Next.Next.Next.Next.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
-	l1.Next.Next.Next.Next.Next.Next = &ListNode{
-		Val:  9,
-		Next: nil,
+		Next: &ListNode{
+			Val:  9,
+			Next: &ListNode{
+				Val:  9,
+				Next: &ListNode{
+					Val:  9,
+					Next: &ListNode{
+						Val:  9,
+						Next: &ListNode{
+							Val:  9,
+							Next: nil,
+						},
+					},
+				},
+			},
+		},
 	}
 
 	l2 := &ListNode{
 		Val:  9,
-		Next: nil,
+		Next: &ListNode{
+			Val:  9,
+			Next: &ListNode{
+				Val:  9,
+				Next: &ListNode{
+					Val:  9,
+					Next: nil,
+				},
+			},
+		},
 	}
-	l2.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
-	l2.Next.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
-	l2.Next.Next.Next = &ListNode{
-		Val:  9,
-		Next: nil,
-	}
+
 	res := addTwoNumbers(l1, l2)
+
+	if res != nil {
+		fmt.Println(res.Val)
+		res = res.Next
+	}
 	fmt.Println(res)
-	fmt.Println(res.Next)
-	fmt.Println(res.Next.Next)
 }
