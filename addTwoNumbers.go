@@ -186,9 +186,8 @@ func main()  {
 
 	res := addTwoNumbers(l1, l2)
 
-	if res != nil {
+	for res != nil {
 		fmt.Println(res.Val)
 		res = res.Next
 	}
-	fmt.Println(res)
 }
