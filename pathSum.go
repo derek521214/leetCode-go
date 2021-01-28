@@ -38,9 +38,8 @@ type TreeNode struct {
  *     Right *TreeNode
  * }
  */
-// 用于返回
+/*// 用于返回
 var res [][]int
-
 func pathSum(root *TreeNode, sum int) [][]int {
 	// 如果root为空那就直接滚蛋
 	if root==nil{
@@ -61,7 +60,7 @@ now :根节点到当前的路径
 sum ：根节点到当前的路径和
 target：目标和
 */
-
+/**
 func dfs (node *TreeNode,now []int,sum,target int){
 	// 结束条件
 	// 左右节点都不为空（叶子节点），那必须得结束了
@@ -95,6 +94,36 @@ func dfs (node *TreeNode,now []int,sum,target int){
 		sum=sum-node.Right.Val
 	}
 	return
+}*/
+
+
+var result [][]int
+var path []int
+
+func pathSum(root *TreeNode, targetSum int) [][]int {
+	if root == nil {
+		return [][]int{}
+	}
+	result = make([][]int, 0)
+	path = make([]int, 0)
+	dfs(root, targetSum, 0)
+	return result
+}
+
+func dfs(node *TreeNode, targetSum, num int) {
+	if node == nil {
+		return
+	}
+	num += node.Val
+	path = append(path, node.Val)
+	if targetSum == num && node.Left == nil && node.Right == nil {
+		var c = make([]int, len(path))
+		copy(c, path)
+		result = append(result, c)
+	}
+	dfs(node.Left, targetSum, num)
+	dfs(node.Right, targetSum, num)
+	path = append(path[:len(path)-1])
 }
 
 func main()  {
