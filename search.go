@@ -137,6 +137,6 @@ func main()  {
 	//test := []int{4,5,6,7,0,1,2}
 	//test := []int{4,5,6,7,9,1,2,3}
 	test := []int{5,1,2,3,4}
-	res := search3(test, 1)
+	res := search1(test, 1)
 	fmt.Print(res)
 }
