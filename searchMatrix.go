@@ -27,7 +27,9 @@ n == matrix[i].length
 每行的所有元素从左到右升序排列
 每列的所有元素从上到下升序排列
  */
-
+/**
+从左下角开始比较 因为右边的比左边的大
+ */
 func searchMatrix(matrix [][]int, target int) bool {
 	if len(matrix) == 0 {
 		return false
@@ -66,3 +68,4 @@ func searchMatrix1(matrix [][]int, target int) bool {
 	}
 	return false
 }
+
