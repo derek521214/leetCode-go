@@ -79,6 +79,70 @@ func reversalList(node *ListNode) *ListNode {
 	return pre
 }
 
+func reorderList2(head *ListNode) {
+	if head == nil {
+		return
+	}
+	nodes := []*ListNode{}
+	for node := head; node != nil; node = node.Next {
+		nodes = append(nodes, node)
+	}
+	i, j := 0, len(nodes)-1
+	for i < j {
+		nodes[i].Next = nodes[j]
+		i++
+		if i == j {
+			break
+		}
+		nodes[j].Next = nodes[i]
+		j--
+	}
+	nodes[i].Next = nil
+}
+
+/**
+执行用时为 4 ms 的范例
+ */
+func reorderList1(head *ListNode)  {
+	if head==nil||head.Next==nil{
+		return
+	}
+	fast:=head
+	slow:=head
+	for fast.Next!=nil&&fast.Next.Next!=nil{
+		fast=fast.Next.Next
+		slow=slow.Next
+	}
+	head2:=slow.Next
+	slow.Next=nil
+	head2=reverse(head2)
+	dummy:=&ListNode{}
+	cur:=dummy
+	cur1:=head
+	cur2:=head2
+	for cur1!=nil&&cur2!=nil{
+		cur.Next=cur1
+		cur=cur.Next
+		cur1=cur1.Next
+
+		cur.Next=cur2
+		cur=cur.Next
+		cur2=cur2.Next
+	}
+	if cur1!=nil{
+		cur.Next=cur1
+	}
+}
+func reverse(head*ListNode)*ListNode{
+	if head==nil||head.Next==nil{
+		return head
+	}
+	rst:=reverse(head.Next)
+	head.Next.Next=head
+	head.Next=nil
+	return rst
+}
+
 func main()  {
 	//test := &ListNode{1,&ListNode{2,&ListNode{3,nil,}}}
 	//test := &ListNode{1,&ListNode{2,&ListNode{3,&ListNode{4,&ListNode{5,nil,}}}}}
