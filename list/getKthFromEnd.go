@@ -15,18 +15,6 @@ import "fmt"
 返回链表 4->5.
  */
 
-type ListNode struct {
-	Val	int
-	Next *ListNode
-}
-
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
 func getKthFromEnd(head *ListNode, k int) *ListNode {
 	var length int
 	curr := head
