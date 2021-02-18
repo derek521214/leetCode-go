@@ -11,11 +11,6 @@ import "fmt"
 你是否可以使用 O(1) 空间解决此题？
  */
 
-type ListNode struct {
-	Val	int
-	Next *ListNode
-}
-
 /**
  * Definition for singly-linked list.
  * type ListNode struct {

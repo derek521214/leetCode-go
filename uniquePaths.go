@@ -60,3 +60,23 @@ func uniquePaths(m int, n int) int {
 	}
 	return nums[n-1][m-1]
 }
+
+/**
+执行消耗内存为 1944 kb 的范例
+ */
+func uniquePaths1(m int, n int) int {
+	k1,k2:=m-1,n-1
+	min:=k1
+	total:=k1+k2
+	if k1>k2{
+		min=k2
+	}
+
+	upper,lowwer:=1,1
+	for i:=0;i<min;i++{
+		upper*=total-i
+		lowwer*=i+1
+	}
+
+	return upper/lowwer
+}
