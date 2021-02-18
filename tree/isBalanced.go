@@ -28,12 +28,6 @@ import "debug/macho"
 -104 <= Node.val <= 104
  */
 
-type TreeNode struct {
-	 Val int
-	 Left *TreeNode
-	 Right *TreeNode
- }
-
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
