@@ -12,10 +12,6 @@ https://leetcode-cn.com/problems/linked-list-cycle/
 进阶：
 你能用 O(1)（即，常量）内存解决此问题吗？
  */
-type ListNode struct {
-	Val int
-	Next *ListNode
-}
 
 /**
  * Definition for singly-linked list.
