@@ -18,11 +18,6 @@ k 是一个正整数，它的值小于或等于链表的长度。
 你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
  */
 
-type ListNode struct {
-	Val	int
-	Next *ListNode
-}
-
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	// 确定k group
 	tail := head
