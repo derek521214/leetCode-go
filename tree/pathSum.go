@@ -24,11 +24,6 @@ https://leetcode-cn.com/problems/path-sum-ii/
    [5,8,4,5]
 ]
  */
-type TreeNode struct {
-	Val int
-	Left *TreeNode
-	Right *TreeNode
-}
 
 /**
  * Definition for a binary tree node.

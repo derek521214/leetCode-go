@@ -16,10 +16,6 @@ import "fmt"
 给定链表 1->2->3->4->5, 重新排列为 1->5->2->4->3.
  */
 
-type ListNode struct {
-	Val int
-	Next *ListNode
-}
 
 /**
  * Definition for singly-linked list.

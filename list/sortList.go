@@ -27,11 +27,6 @@ import "fmt"
 -105 <= Node.val <= 105
  */
 
-type ListNode struct {
-	Val int
-	Next *ListNode
-}
-
 /**
  * Definition for singly-linked list.
  * type ListNode struct {

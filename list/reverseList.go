@@ -20,11 +20,6 @@ import "fmt"
  * }
  */
 
-type ListNode struct {
-	Val	int
-	Next *ListNode
-}
-
 /**
 解题思路
 首先定义一个cur指针，指向头结点，再定义一个pre指针，初始化为null。

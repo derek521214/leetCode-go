@@ -33,13 +33,6 @@ package main
 树中节点数目在范围 [0, 100] 内
  */
 
-type TreeNode struct {
-	Val int
-	Left *TreeNode
-	Right *TreeNode
-}
-
-
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
