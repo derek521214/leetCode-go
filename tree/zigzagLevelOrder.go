@@ -24,11 +24,11 @@ import "fmt"
 通过次数115,194提交次数201,838
  */
 
- type TreeNode struct {
+/* type TreeNode struct {
 	 Val int
 	 Left *TreeNode
 	 Right *TreeNode
- }
+ }*/
 
 /**
  * Definition for a binary tree node.
