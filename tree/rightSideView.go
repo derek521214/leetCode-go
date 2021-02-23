@@ -68,7 +68,7 @@ func dfs(root *TreeNode, layer int, res []int) []int {
 	if root == nil {
 		return res
 	}
-
+	//一层放一个
 	if len(res) < layer {
 		res = append(res, root.Val)
 	}
