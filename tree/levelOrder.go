@@ -1,10 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 /**
 102. 二叉树的层序遍历
 给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
-
 
 
 示例：
@@ -29,6 +30,30 @@ type TreeNode struct {
 	 Right *TreeNode
  }
 
+ /**
+ 深度优先
+  */
+func levelOrder(root *TreeNode) [][]int {
+	var result [][]int
+	result = depth(root, 0, result)
+	return result
+}
+
+func depth( node *TreeNode, level int, nums [][]int) [][]int  {
+	if node == nil {
+		return nums
+	}
+	if len(nums) == level {
+		nums = append(nums, []int{})
+	}
+	nums[level] = append(nums[level], node.Val)
+	nums = depth( node.Left, level+1, nums)
+	nums = depth( node.Right, level+1, nums)
+	return nums
+}
+
+
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -37,7 +62,10 @@ type TreeNode struct {
  *     Right *TreeNode
  * }
  */
-func levelOrder(root *TreeNode) [][]int {
+/**
+广度优先
+ */
+func levelOrder1(root *TreeNode) [][]int {
 	if root == nil {
 		return nil
 	}
