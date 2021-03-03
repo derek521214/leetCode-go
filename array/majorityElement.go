@@ -41,3 +41,25 @@ func majorityElement(nums []int) int {
 	}
 	return 0
 }
+
+
+func majorityElement1(nums []int) int {
+	// 核心思想：两两抵消，最后剩余的数就是结果
+	num:=nums[0]
+	count:=1
+	for i:=1;i<len(nums);i++{
+		if nums[i] == num{
+			count++
+		}else {
+			if count-1 == 0{
+				i++
+				num = nums[i]
+				count = 1
+			}else{
+				count--
+			}
+		}
+	}
+	return num
+}
+
